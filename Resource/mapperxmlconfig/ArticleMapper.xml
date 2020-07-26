@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.colin.mapper.ArticleMapper">
+    <insert id="insertArticle">
+        insert into article(u_id,title,content,type,flag) values(#{user.id},#{title},#{content},#{type},#{flag})
+    </insert>
+    <update id="updateArticle">
+        update article set title = #{title},content = #{content},type = #{type},flag = #{flag} where id = #{id}
+    </update>
+    <delete id="deleteArticle">
+        delete from article where id = #{param1} and u_id = #{param2}
+    </delete>
+    <select id="selectCountByUid" resultType="java.lang.Integer">
+        select count(*) from article where u_id = #{id}
+    </select>
+    <select id="selectNewArticleByUid" resultType="com.colin.bean.Article">
+        select title,pageview from article where u_id= #{id} order by createtime desc limit 4
+    </select>
+    <select id="selectAllArticleByUid" resultType="com.colin.bean.Article">
+       select id,u_id,title,createtime,pageview,type,flag,`condition` from article where u_id = #{param3} limit #{param1},#{param2}
+    </select>
+    <select id="selectArticleById" resultType="com.colin.bean.Article">
+        select id,title,content,createtime,pageview,type,flag from article where id=#{id};
+    </select>
+    <select id="selectFrontAllArticleByUid" resultType="com.colin.bean.Article">
+        select id,title,type from article where u_id=#{id}
+    </select>
+</mapper>

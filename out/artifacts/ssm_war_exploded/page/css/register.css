@@ -1,0 +1,20 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #f5f5f5;
+}
+
+.allpage{
+    width: 960px;
+    height: 540px;
+    margin: 60px auto;
+    background: url("../img/login/login_bg.jpg") 50% no-repeat;
+}
+
+.register{
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 25%;
+
+}

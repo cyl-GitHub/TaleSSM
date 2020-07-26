@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+    <link rel="stylesheet" href="../css/register.css">
+    <link href="/page/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/page/js/jquery.min.js"></script>
+    <script src="/page/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        function check() {
+            if (pass.value != pass1.value) {
+                check_tip.innerHTML = "<font color=red>两次输入的密码不相符</font>";
+            } else {
+                check_tip.innerHTML = "<font color=blue></font>";
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="allpage">
+    <div class="register">
+        <div class="row" style="padding: 91px 100px 19px 50px;">
+            <form class="form-inline" role="form" action="/registerServlet" method="post">
+                <div class="form-group">
+                    <label class="sr-only" for="name">博客名</label>
+                    <input type="text" class="form-control" placeholder="Blog name" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="pass">密码</label>
+                    <input type="password" class="form-control" placeholder="Password" id="pass" name="password1" onkeyup="check()">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="pass1">确认密码</label>
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="password2" id="pass1" onkeyup="check()">
+                </div>
+                <div id=check_tip></div>
+                <div class="form-group">
+                    <input class="btn btn-default" type="submit" value="提交">
+                    <input class="btn btn-default" type="reset" value="重置">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

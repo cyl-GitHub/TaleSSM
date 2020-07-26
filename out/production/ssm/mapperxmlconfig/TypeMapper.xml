@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.colin.mapper.TypeMapper">
+    <insert id="insertType">
+        insert into type(u_id,name) value (#{id},#{name})
+    </insert>
+    <select id="selectTypeByUid" resultType="com.colin.bean.Type">
+        select id,name from type where u_id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.colin.mapper.MessageMapper">
+    <insert id="insertMessage">
+        insert into message(a_id,u_id,message) value(#{article.id},#{u_id},#{message})
+    </insert>
+    <select id="selectMessageCountByUid" resultType="java.lang.Integer">
+        select count(*) from message where u_id = #{id}
+    </select>
+    <select id="selectNewMessageByUid" resultType="com.colin.bean.Message">
+        select message,createtime,v_id from message where u_id = #{id} order by createtime desc limit 4
+    </select>
+    <select id="selectMessageByAid" resultType="com.colin.bean.Message">
+        select message,createtime,v_id from message  where a_id = #{id} order by createtime
+    </select>
+</mapper>

@@ -1,0 +1,36 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+ul{
+    text-decoration: none;
+    padding-left: 0px;
+}
+a{
+    display: block;
+    width: 100%;
+    line-height: 50px;
+    text-decoration: none;
+    padding-bottom: 15px;
+}
+
+a:hover{
+    background-color: #272c35;
+
+}
+
+a:active{
+    background-color: #272c35;
+}
+li{
+    height: 6%;
+    list-style: none;
+    color: #a7b1c2;
+    padding: 5px auto;
+    text-align: center;
+}
+
+.div1{
+    width: 197px;
+    height: 35px;
+}
